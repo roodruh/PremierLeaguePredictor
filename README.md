@@ -1,9 +1,3 @@
-Here is a professional, employer-friendly README for your GitHub repository.
-
-It is structured to highlight not just *what* the project does, but *how* you solved the problem, emphasizing your skills in feature engineering, machine learning pipelines, and full-stack integration.
-
----
-
 # EPL Match Predictor ⚽️
 
 A Machine Learning powered web application that predicts the outcomes of English Premier League matches. This project integrates a Random Forest classification model with a Flask web interface to provide real-time win/draw/loss probabilities based on historical match data, team form, and dynamic ELO ratings.
