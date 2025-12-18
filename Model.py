@@ -13,11 +13,16 @@ cols_to_drop = ['Unnamed: 0', 'Comp', 'Notes', 'Match Report', 'Attendance', 'Ca
 df = df.drop(columns=[c for c in cols_to_drop if c in df.columns])
 
 team_to_opp = {
-    'Tottenham Hotspur': 'Tottenham', 'Manchester United': 'Manchester Utd',
-    'Manchester City': 'Manchester City', 'Newcastle United': 'Newcastle Utd',
-    'Wolverhampton Wanderers': 'Wolves', 'Brighton and Hove Albion': 'Brighton',
-    'West Ham United': 'West Ham', 'Nottingham Forest': "Nott'ham Forest"
+    'Tottenham Hotspur': 'Tottenham', 
+    'Manchester United': 'Manchester Utd',
+    'Manchester City': 'Manchester City', 
+    'Newcastle United': 'Newcastle Utd',
+    'Wolverhampton Wanderers': 'Wolves', 
+    'Brighton and Hove Albion': 'Brighton',
+    'West Ham United': 'West Ham',
+    'Nottingham Forest': "Nott'ham Forest"
 }
+
 opp_to_team = {v: k for k, v in team_to_opp.items()}
 for t in df['team'].unique():
     if t not in team_to_opp:
@@ -118,7 +123,7 @@ def get_model_accuracy(X_data, y_data):
 get_model_accuracy(X_test, y_test)
 
 # MATCHUP
-def predict_match_final(team1, team2):
+def predict_matchup(team1, team2):
     if team1 not in current_elo or team2 not in current_elo:
         return "Error: Team not found."
         
@@ -145,6 +150,3 @@ def predict_match_final(team1, team2):
     
     res_map = {2: 'Win', 1: 'Draw', 0: 'Loss'}
     return f"Prediction for {team1}: {res_map[pred]} (Win: {probs[2]:.0%}, Draw: {probs[1]:.0%}, Loss: {probs[0]:.0%})"
-
-# Example Usage
-print(predict_match_final('Arsenal', 'Tottenham Hotspur'))

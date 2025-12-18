@@ -1,0 +1,35 @@
+<!-- prettier-ignore -->
+{% extends "base.html" %}
+
+{% block title %}EPLPredictor{% endblock %}
+
+{% block content %}
+
+<form id="team-form" method="POST">
+  <div class="team-dropdown" id="team1">
+    <select name="team1" id="team1" required>
+      <option value="">Select a team</option>
+      {% for team in teams %}
+      <option value="{{ team }}">{{ team }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div id="result">
+    <button id="result-btn" type="submit">VS</button>
+    {% if result %}
+    <p id="result-text">{{ result }}</p>
+    {% endif %}
+  </div>
+
+  <div class="team-dropdown" id="team2">
+    <select name="team2" id="team2" required>
+      <option value="">Select a team</option>
+      {% for team in teams %}
+      <option value="{{ team }}">{{ team }}</option>
+      {% endfor %}
+    </select>
+  </div>
+</form>
+
+{% endblock %}
