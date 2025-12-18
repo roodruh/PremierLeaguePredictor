@@ -108,6 +108,6 @@ python app.py
 Open your browser and navigate to `http://127.0.0.1:5000/`.
 
 ## 📸 Screenshots
-!web_interface_prediction
+![prediction](web_interface_prediction)
 
 
